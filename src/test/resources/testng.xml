@@ -3,7 +3,7 @@
 <suite name="Suite">
   <test thread-count="5" name="Test">
     <classes>
-      <class name="org.api.LaunchBrowser"/>
+      <class name="org.api.OrganizationCreation"/>
       </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
