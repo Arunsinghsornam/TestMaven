@@ -310,7 +310,7 @@ public class OrganizationCreation  extends BaseClass{
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		OrganizationManagement or = new OrganizationManagement();
  
-		or.getOrgManagement().click();
+		js.executeScript("arguments[0].click()",or.getOrgManagement());
 		Thread.sleep(4000);
 		or.getEmployees().click();
 		Thread.sleep(4000);
