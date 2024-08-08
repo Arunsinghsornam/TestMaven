@@ -34,7 +34,7 @@ public class PostAPI {
 	public static void logIn() throws InterruptedException {
 
 		requestSpec=RestAssured.given();
-		requestSpec.baseUri("https:testapi.miwisa.in");
+		requestSpec.baseUri("https://testapi.miwisa.in");
 		requestSpec.basePath("/apisecurity/login");
 		response = requestSpec.auth()
 				.basic("username", "password")
@@ -50,7 +50,7 @@ public class PostAPI {
 
 	@Test(dependsOnMethods= {"logIn"})
 	public void lmsAddContactDetails() {
-		 //Create form data
+		// Create form data
 		String user1 = "bhanu" + new Random().nextInt(1000);
 		String mobileNumber1 = "9236567" + new Random().nextLong(1000);
 		System.out.println(mobileNumber1);
@@ -91,7 +91,7 @@ public class PostAPI {
 		jsonData1.put("categoryTitle", "Decision Maker");
 
 		List<JSONObject> payload = new ArrayList<>();
-		payload.add(jsonData);
+		//payload.add(jsonData);
 
 		payload.add(jsonData);
 		payload.add(jsonData1);
@@ -99,7 +99,7 @@ public class PostAPI {
 
 
 		requestSpec = RestAssured.given();
-		requestSpec.baseUri("https:testapi.miwisa.in");
+		requestSpec.baseUri("https://testapi.miwisa.in");
 		requestSpec.basePath("/api/LMSContactDetails/AddContactDetails");
 		requestSpec.header("Authorization", "Bearer " + authToken);
 		requestSpec.contentType("multipart/form-data");
@@ -111,13 +111,13 @@ public class PostAPI {
 		System.out.println("Post ResponseBody Is " + body);
 
 		try {
-			Connection con = DriverManager.getConnection("jdbc:sqlserver:miwisadb-2.cxebotchjdqu.ap-south-1.rds.amazonaws.com:1433;database=micronsure_test;user=MNsure_Test_Read;password=R3ad#2022!@Test;encrypt=true;trustServerCertificate=true;loginTimeout=30;");
+			Connection con = DriverManager.getConnection("jdbc:sqlserver://miwisadb-2.cxebotchjdqu.ap-south-1.rds.amazonaws.com:1433;database=micronsure_test;user=MNsure_Test_Read;password=R3ad#2022!@Test;encrypt=true;trustServerCertificate=true;loginTimeout=30;");
 			Statement stmt = con.createStatement();
 			String newContactDetails = "select top 2 * from LMSContactDetails order by id desc";
 			ResultSet rs = stmt.executeQuery(newContactDetails);
-						int count = 0;
+			//			int count = 0;
 			while (rs.next()) {
-								count++;
+				//				count++;
 				int id = rs.getInt("Id");
 				String contactID = String.valueOf(id);
 				System.out.println("New ContactID Is =" + contactID);
