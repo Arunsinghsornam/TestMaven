@@ -3,7 +3,7 @@
 <suite name="Suite">
   <test thread-count="5" name="Test">
     <classes>
-      <class name="org.api.PostAPI"/>
+      <class name="org.api.LaunchBrowser"/>
       </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
