@@ -42,10 +42,10 @@ public class OrganizationCreation  extends BaseClass{
 		lp.getUserName().sendKeys("Testsuperadmin@micronsure.com");
 		lp.getUserPassWord().sendKeys("Testadmin2@23");
 		lp.getLogInButton().click();
-		Thread.sleep(5000);
-		WebElement okButton = driver.findElement(By.xpath("//button[normalize-space()='Ok']"));
-		okButton.click();
-		Thread.sleep(5000);
+		// Thread.sleep(5000);
+		// WebElement okButton = driver.findElement(By.xpath("//button[normalize-space()='Ok']"));
+		// okButton.click();
+		// Thread.sleep(5000);
 	}
  
 	@Test(dependsOnMethods="superAdminlogIn")
